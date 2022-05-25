@@ -8,6 +8,7 @@ main.py実行で起動できます。
 
 ## Auther
 不具合・質問があればこちらへ  
-Twitter : [](https://twitter.com/g75hca) 
+Twitter : 
+https://twitter.com/g75hca  
 meil : s20t301@stu.kagawa-u.ac.jp  
 SLP所属の方はSlackのDMへ送ってください
