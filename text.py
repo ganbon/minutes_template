@@ -36,7 +36,7 @@ class Text:
         name1=self.name1.get()
         name2=self.name2.get()
         number=self.student_number.get()
-        return f"□ SLP 定例活動 {self.now_year}.{self.now_month:02}.{self.now_day:02} s{number} {name1} {name2}\n\n"
+        return f"□ SLP 定例活動 {self.now_year}.{self.now_month:02}.{self.now_day:02} s{number} {name1}{name2}\n\n"
     
     def active_member(self):
         out=""
