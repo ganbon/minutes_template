@@ -7,9 +7,9 @@ class Text:
         self.now_year = int(now_date.year)
         self.now_month = int(now_date.month)
         self.now_day = int(now_date.day)
-        self.member=member
-        self.function_context=func
-        self.plan_context=plan
+        self.member = member
+        self.function_context = func
+        self.plan_context = plan
         self.week_list = ["月","火","水","木","金","土","日"]
     
     def create_minutes(self):
@@ -36,16 +36,20 @@ class Text:
         name1=self.name1.get()
         name2=self.name2.get()
         number=self.student_number.get()
-        return f"□ SLP 定例活動 {self.now_year}.{self.now_month:02}.{self.now_day:02} s{number} {name1}{name2}\n\n"
+        d_key = dt.date(self.now_year,self.now_month,self.now_day)
+        week_key = d_key.weekday()
+        now_week = self.week_list[week_key]
+        return f"□ SLP 定例活動 {self.now_year}.{self.now_month:02}.{self.now_day:02}({now_week}) s{number} {name1}{name2}\n\n"
     
     def active_member(self):
         out=""
         class_str = ["○ D1 ","○ M2 ","○ M1 ","○ B4 ","○ B3 ","○ B2 ","○ B1 "]
         for c,m in zip(class_str,self.member): 
-            member=m.get().split('　')
-            if member!=[""]:
+            member = m.get().replace('　',' ')
+            member_list = member.split(' ')
+            if member_list!=[""]:
                 out+=c
-                for s in member:
+                for s in member_list:
                     out+=f"{s}、"
                 out+='\n'
         out+='\n'
