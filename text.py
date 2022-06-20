@@ -48,10 +48,8 @@ class Text:
             member = m.get().replace('　',' ')
             member_list = member.split(' ')
             if member_list!=[""]:
-                out+=c
-                for s in member_list:
-                    out+=f"{s}、"
-                out+='\n'
+                out += c
+                out+='、'.join(member_list)
         out+='\n'
         return out
     
