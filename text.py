@@ -42,7 +42,7 @@ class Text:
         return f"□ SLP 定例活動 {self.now_year}.{self.now_month:02}.{self.now_day:02}({now_week}) s{number} {name1}{name2}\n\n"
     
     def active_member(self):
-        out=""
+        out="● 出席\n\n"
         class_str = ["○ D1 ","○ M2 ","○ M1 ","○ B4 ","○ B3 ","○ B2 ","○ B1 "]
         for c,m in zip(class_str,self.member): 
             member = m.get().replace('　',' ')
@@ -50,6 +50,7 @@ class Text:
             if member_list!=[""]:
                 out += c
                 out+='、'.join(member_list)
+                out+='\n'
         out+='\n'
         return out
     
