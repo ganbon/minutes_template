@@ -89,7 +89,7 @@ class Text:
         return out
         
     def plan(self):
-        out="■ 予定\n\n"
+        out="★ 連絡\n\n■ 予定\n\n"
         for p in self.plan_context:
             plan_list = self.value_get(p)
             plan_list[:len(plan_list)-1] = [int(x) for x in plan_list[:len(plan_list)-1]]
